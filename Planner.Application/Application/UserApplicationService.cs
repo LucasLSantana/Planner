@@ -1,7 +1,7 @@
 ﻿using Planner.Application.Application.DTOs;
 using Planner.Application.Interface;
 using Planner.Domain.Domain.Entities;
-using Planner.Domain.Domain.Interfaces;
+using Planner.Domain.Domain.Interfaces.Services;
 
 namespace Planner.Application.Application;
 

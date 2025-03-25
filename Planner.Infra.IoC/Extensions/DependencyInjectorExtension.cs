@@ -3,6 +3,7 @@ using Planner.Application.Application;
 using Planner.Application.Interface;
 using Planner.Domain.Domain.Interfaces;
 using Planner.Domain.Domain.Interfaces.Repositories;
+using Planner.Domain.Domain.Interfaces.Services;
 using Planner.Domain.Domain.Services;
 using Planner.Infra.Data.Repositories;
 
@@ -15,6 +16,10 @@ public static class DependencyInjectorExtension
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserApplicationService, UserApplicationService>();
+        
+        services.AddScoped<ICalendarService, CalendarService>();
+        services.AddScoped<ICalendarRepository, CalendarRepository>();
+        services.AddScoped<ICalendarApplicationService, CalendarApplicationService>();
         return services;
     }
 }

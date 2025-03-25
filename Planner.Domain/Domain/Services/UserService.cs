@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Planner.Domain.Domain.Entities;
-using Planner.Domain.Domain.Interfaces;
 using Planner.Domain.Domain.Interfaces.Repositories;
+using Planner.Domain.Domain.Interfaces.Services;
 
 namespace Planner.Domain.Domain.Services;
 
@@ -24,7 +24,7 @@ public class UserService : IUserService
         await _repository.DeleteAsync(id);
     }
 
-    public async Task<IQueryable<User>> AsQueryable()
+    public async Task<List<User>> AsQueryable()
     {
         return await _repository.AsQueryable();
     }

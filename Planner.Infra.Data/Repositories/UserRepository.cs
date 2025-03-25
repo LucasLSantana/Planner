@@ -31,9 +31,9 @@ public class UserRepository : IUserRepository
         await _context.SaveChangesAsync();
     }
 
-    public Task<IQueryable<User>> AsQueryable()
+    public async Task<List<User>> AsQueryable()
     {
-        return Task.FromResult(_context.User.Take(50));
+        return await _context.User.Take(50).ToListAsync();
     }
     
     public async Task<User> FindWithPredicate(Expression<Func<User, bool>> predicate)

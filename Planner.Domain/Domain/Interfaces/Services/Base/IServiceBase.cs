@@ -9,7 +9,7 @@ public interface IServiceBase<T>
     Task UpdateAsync(T entity);
     Task DeleteAsync(Guid id);
     Task<T> GetByIdAsync(Guid id);
-    Task<IQueryable<T>> AsQueryable();
-    Task<T> FindWithPredicate(Expression<Func<User, bool>> predicate);
-    Task<IEnumerable<T>> FindListWithPredicate(Expression<Func<User, bool>> predicate);
+    Task<List<T>> AsQueryable();
+    Task<T> FindWithPredicate(Expression<Func<T, bool>> predicate);
+    Task<IEnumerable<T>> FindListWithPredicate(Expression<Func<T, bool>> predicate);
 }
